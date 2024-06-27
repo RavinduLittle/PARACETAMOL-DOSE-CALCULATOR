@@ -1,0 +1,135 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.calculator-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.sinhala {
+    color: #090808;
+    font-weight: bold;
+}
+
+
+
+h1 {
+    font-size: 20px;
+    color: #040404;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+input[type="number"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+fieldset {
+    margin-bottom: 10px;
+    border: none;
+    padding: 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+button {
+    width: 50%; /* Adjust the width as needed, e.g., '100%', 'auto', or specific value */
+    height: 60px; /* Set the desired height */
+    padding: 8px;
+    background-color: #3ba728;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-left: 120px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.result {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Laptop (1024px) */
+@media (max-width: 1024px) {
+    .calculator-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    p, label, input[type="number"], legend, button {
+        font-size: 12px;
+    }
+}
+
+/* Mobile (500px) */
+@media (max-width: 500px) {
+    .calculator-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    p, label, input[type="number"], legend, button {
+        font-size: 11px;
+    }
+
+    button {
+        padding: 8px;
+    }
+}
