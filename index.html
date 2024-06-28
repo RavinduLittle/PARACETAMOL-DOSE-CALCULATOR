@@ -15,12 +15,17 @@
         <p>
             <span class="sinhala">සටහන: මෙම කැල්කියුලේටරය කිසිදු පුද්ගලික දත්ත රැස් කිරීම හෝ වාර්තා කිරීම සිදු නොකරයි.</span>
             <br>
-            <span class="tamil">குறிப்பு: இந்த கணினியைப் பயன்படுத்தி நேரில் மருத்துவர் அனுமதிக்கும் முன்னிலையில் எந்த மருந்தையும் செலுத்தாதீர்கள்.</span>
+            <span class="tamil">குறிப்பு: இந்த கணிப்பான் (கால்குலேட்டர்) தனிப்பட்ட தரவு எதையும் சேகரிக்கவோ பதிவு செய்யவோ மாட்டாது.</span>
         </p>
         <p>
             <span class="sinhala">දරුවාට ලබා දිය යුතු පැරසිටමෝල් මාත්‍රාව බර අනුව ගණනය කර ගනිමු.</span>
             <br>
-            <span class="tamil">குழந்தைக்கு அளிக்க வேண்டிய பராசிடமால் மருந்தளவை எடையின் அடிப்படையில் கணக்கிடுங்கள்.</span>
+            <span class="tamil">குழந்தையின் எடைக்கு ஏற்ப கொடுக்க வேண்டிய பரசிட்டமோலின் அளவைக் கணக்கிடுவோம்.</span>
+        </p>
+        <p>
+            <span class="sinhala">දරුවාගේ බර කිලෝග්‍රෑම් වලින් මැනගෙන පහත කැල්කියුලේටරය (calculator) මඟින් ලබා දිය යුතු මාත්‍රාව සොයාගන්න.</span>
+            <br>
+            <span class="tamil">குழந்தையின் எடையை கிலோகிராமில் அளந்து, கீழே உள்ள கால்குலேட்டரைப் பயன்படுத்தி கொடுக்க வேண்டிய அளவைக் கண்டறியவும்.</span>
         </p>
         <form id="doseForm">
             <label for="weight">
@@ -33,25 +38,25 @@
                 <legend>
                     <span class="sinhala">පැරසිටමෝල් සාන්ද්‍රණය (බෝතලයේ සඳහන් පරිදි) තෝරන්න</span>
                     <br>
-                    <span class="tamil">பாராசிட்டமாலின் செறிவைத் தேர்ந்தெடுக்கவும் (பாட்டில் கூறப்பட்டுள்ளது)</span>
+                    <span class="tamil"> பரசிட்டமோலின் செறிவைத் தேர்ந்தெடுக்கவும் (போத்தலில் கூறப்பட்டுள்ளவாறு).</span>
                 </legend>
                 <label>
                     <input type="radio" name="strength" value="120" checked>
                     <span class="sinhala">පැරසිටමෝල් 120mg / 5ml</span>
                     <br>
-                    <span class="tamil">பாராசிடமால் 120mg / 5ml</span>
+                    <span class="tamil">பரசிட்டமோல் 120mg / 5ml</span>
                 </label>
                 <label>
                     <input type="radio" name="strength" value="250">
                     <span class="sinhala">පැරසිටමෝල් 250mg / 5ml</span>
                     <br>
-                    <span class="tamil">பாராசிடமால் 250mg / 5ml</span>
+                    <span class="tamil">பரசிட்டமோல் 250mg / 5ml</span>
                 </label>
             </fieldset>
             <button type="button" onclick="calculateDose()">
                     ගණනය කරන්න
                 <br>
-                கணக்கிடுக
+                கணக்கிடுங்கள்
             </button>
         </form>
         <div id="result" class="result">
@@ -59,14 +64,14 @@
                 <span class="sinhala">මාත්‍රාව ml වලින්:</span>
                 <span id="doseMl"></span>
                 <br>
-                <span class="tamil">அளவு ml லிட்ரில்:</span>
+                <span class="tamil">டோஸ் ml இல் :</span>
                 <span id="doseM2"></span>
             </p>
             <p>
                 <span class="sinhala">මාත්‍රාව mg වලින්:</span>
                 <span id="doseMg"></span>
                 <br>
-                <span class="tamil">அளவு mg வில்:</span>
+                <span class="tamil">டோஸ் mg இல்:</span>
                 <span id="doseMg2"></span>
             </p>
         </div>
@@ -81,7 +86,7 @@
         <p>
             <span class="sinhala">මාත්‍රාව පිළිබඳ ඔබට සැකයක් ඇත්නම් වහාම ඔබේ ඖෂධවේදියාගෙන් විමසා දැනගන්න.</span>
             <br>
-            <span class="tamil">மருந்தளவு பற்றி சந்தேகம் இருந்தால் உடனடியாக உங்கள் மருத்துவர்களை அணுகவும்.</span>
+            <span class="tamil">மருந்தின் அளவு குறித்து உங்களுக்கு சந்தேகம் இருந்தால், உடனடியாக உங்கள் மருந்தாளரிடம் கேளுங்கள்.</span>
         </p>
     </div>
     <script src="script.js"></script>
