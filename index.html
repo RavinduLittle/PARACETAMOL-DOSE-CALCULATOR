@@ -8,10 +8,7 @@
 </head>
 <body>
     <div class="calculator-container">
-        <h1>
-           PARACETAMOL DOSE CALCULATOR
-            
-        </h1>
+        <h1>PARACETAMOL DOSE CALCULATOR</h1>
         <p>
             <span class="sinhala">සටහන: මෙම කැල්කියුලේටරය කිසිදු පුද්ගලික දත්ත රැස් කිරීම හෝ වාර්තා කිරීම සිදු නොකරයි.</span>
             <br>
@@ -27,6 +24,7 @@
             <br>
             <span class="tamil">குழந்தையின் எடையை கிலோகிராமில் அளந்து, கீழே உள்ள கால்குலேட்டரைப் பயன்படுத்தி கொடுக்க வேண்டிய அளவைக் கண்டறியவும்.</span>
         </p>
+        <p style="color: red;"><b>*පැරසිටමෝල් දියර සහ පෙති සඳහා පමණි.</b></p>
         <form id="doseForm">
             <label for="weight">
                 <span class="sinhala">බර (කිලෝග්‍රෑම් වලින්):</span>
@@ -34,7 +32,22 @@
                 <span class="tamil">எடை (கிலோகிராம்):</span>
             </label>
             <input type="number" step="0.1" id="weight" name="weight" required placeholder="උදා:- 7kg 600g=7.6kg / உதா: - 7kg 600g=7.6kg">
-            <fieldset>
+            <h5>
+                <span>දරුවාට පැරසිටමෝල් ලබා දෙන්නේ</span>
+                <br>
+                <span>குழந்தைக்கு பரசிட்டமோல் வழங்கப்படுவது</span>
+            </h5>
+            <div class="type_dos">
+            <label>
+                <input type="radio" name="form" value="liquid" checked>
+                <span>දියර වශයෙන්</span>/<span class="tamil">திரவமாக</span>
+            </label>
+            <label>
+                <input type="radio" name="form" value="tablet">
+                <span>පෙති වශයෙන්</span>/<span class="tamil">மாத்திரையாக</span>
+            </label>
+           </div>
+            <fieldset id="liquidFields">
                 <legend>
                     <span class="sinhala">පැරසිටමෝල් සාන්ද්‍රණය (බෝතලයේ සඳහන් පරිදි) තෝරන්න</span>
                     <br>
@@ -54,7 +67,7 @@
                 </label>
             </fieldset>
             <button type="button" onclick="calculateDose()">
-                    ගණනය කරන්න
+                ගණනය කරන්න
                 <br>
                 கணக்கிடுங்கள்
             </button>
@@ -63,7 +76,7 @@
             <p>
                 <span class="sinhala">මාත්‍රාව ml වලින්:</span>
                 <span id="doseMl"></span>
-                <br>
+                <br> 
                 <span class="tamil">டோஸ் ml இல் :</span>
                 <span id="doseM2"></span>
             </p>
@@ -74,14 +87,19 @@
                 <span class="tamil">டோஸ் mg இல்:</span>
                 <span id="doseMg2"></span>
             </p>
+            <p id="tabletInfo" style="display: none;">
+                <b>
+                Paracetamol 500mg
+                <br>
+                (පැරසිටමෝල් පෙත්තක බර 500mg වේ)
+                <br>
+                (ஒரு பரசிட்டமோல் மாத்திரை 500mg எடை கொண்டது.)</b>
+            </p>
         </div>
         <p>
-            <span class="sinhala">වයස මාස 1 සිට අවුරුදු 12 දක්වා පමණි නිර්දේශිත මාත්‍රාව: 
-                මාස 1 - අවුරුදු 12 දක්වා-15mg/1kg</span>
+            <span class="sinhala">වයස මාස 1 සිට අවුරුදු 12 දක්වා පමණි නිර්දේශිත මාත්‍රාව: මාස 1 - අවුරුදු 12 දක්වා-15mg/1kg</span>
             <br>
-            <span class="tamil"> வயது 1 மாதம் முதல் 12 வயது வரை மட்டுமே.
-                பரிந்துரைக்கப்பட்ட அளவு: 
-                1 மாதம் - 12 ஆண்டுகள் வரை - 15mg/1kg </span>
+            <span class="tamil"> வயது 1 மாதம் முதல் 12 வயது வரை மட்டுமே. பரிந்துரைக்கப்பட்ட அளவு: 1 மாதம் - 12 ஆண்டுகள் வரை - 15mg/1kg </span>
         </p>
         <p>
             <span class="sinhala">මාත්‍රාව පිළිබඳ ඔබට සැකයක් ඇත්නම් වහාම ඔබේ ඖෂධවේදියාගෙන් විමසා දැනගන්න.</span>

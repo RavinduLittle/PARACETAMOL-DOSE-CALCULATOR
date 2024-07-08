@@ -1,28 +1,66 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const formRadioButtons = document.querySelectorAll('input[name="form"]');
+    const liquidFields = document.getElementById('liquidFields');
+    const resultMl = document.getElementById('doseMl');
+    const resultMl2 = document.getElementById('doseM2');
+    const resultMg = document.getElementById('doseMg');
+    const resultMg2 = document.getElementById('doseMg2');
+    const tabletInfo = document.getElementById('tabletInfo');
+
+    // Function to toggle visibility of liquid fields
+    function toggleFields() {
+        if (document.querySelector('input[name="form"]:checked').value === 'liquid') {
+            liquidFields.style.display = 'block';
+            resultMl.parentElement.style.display = 'block';
+            resultMg.parentElement.style.display = 'none';
+            tabletInfo.style.display = 'none';
+        } else {
+            liquidFields.style.display = 'none';
+            resultMl.parentElement.style.display = 'none';
+            resultMg.parentElement.style.display = 'block';
+            tabletInfo.style.display = 'block';
+        }
+    }
+
+    // Add event listeners to form radio buttons
+    formRadioButtons.forEach(function(radio) {
+        radio.addEventListener('change', toggleFields);
+    });
+
+    // Initial call to set the correct state on page load
+    toggleFields();
+});
+
 function calculateDose() {
-    const weight = document.getElementById('weight').value;
-    const strength = document.querySelector('input[name="strength"]:checked').value;
+    const weight = parseFloat(document.getElementById('weight').value);
+    const form = document.querySelector('input[name="form"]:checked').value;
+    const resultMl = document.getElementById('doseMl');
+    const resultMl2 = document.getElementById('doseM2');
+    const resultMg = document.getElementById('doseMg');
+    const resultMg2 = document.getElementById('doseMg2');
 
-    const doseMg = weight * 15;
-    const doseMg2 = weight * 15;
-    let doseMl;
-    let doseM2;
-
-    if (strength == 120) {
-        doseMl = doseMg / (120 / 5);
-    } else if (strength == 250) {
-        doseMl = doseMg / (250 / 5);
+    if (isNaN(weight) || weight <= 0) {
+        alert("Please enter a valid weight.");
+        return;
     }
 
-    if (strength == 120) {
-        doseM2 = doseMg2 / (120 / 5);
-    } else if (strength == 250) {
-        doseM2 = doseMg2 / (250 / 5);
+    if (form === 'liquid') {
+        const strength = parseFloat(document.querySelector('input[name="strength"]:checked').value);
+        const doseMg = weight * 15;
+        const doseMl = (doseMg / strength) * 5;
+        resultMl.textContent = doseMl.toFixed(2) + " ml සෑම පැය 6 වරක්, පැය 24කදී උපරිම වාර 4ක් දක්වා";
+        resultMl2.textContent = doseMl.toFixed(2) + " ml ஒவ்வொரு 6 மணித்தியாலங்களிற்கு ஒரு முறை, அதிகபட்சம் 24 மணி நேரத்தில் 4 தடவைகள்";
+        resultMg.textContent = "";
+        resultMg2.textContent = "";
+    } else if (form === 'tablet') {
+        const doseMg = weight * 15;
+        resultMl.textContent = "";
+        resultMl2.textContent = "";
+        resultMg.textContent = doseMg.toFixed(2) + " mg  සෑම පැය 6 වරක්, පැය 24කදී උපරිම වාර 4ක් දක්වා";
+        resultMg2.textContent = doseMg.toFixed(2) + " mg ஒவ்வொரு 6 மணித்தியாலங்களிற்கு ஒரு முறை, அதிகபட்சம் 24 மணி நேரத்தில் 4 தடவைகள்";
+
+       
     }
-
-    document.getElementById('doseMl').innerText = `${doseMl.toFixed(2)} mL සෑම පැය 6 වරක්, පැය 24කදී උපරිම වාර 4ක් දක්වා`;
-    document.getElementById('doseM2').innerText = `${doseM2.toFixed(2)} mL ஒவ்வொரு 6 மணித்தியாலங்களிற்கு ஒரு முறை, அதிகபட்சம் 24 மணி நேரத்தில் 4 தடவைகள்`;
-
-    document.getElementById('doseMg').innerText = `${doseMg} mg සෑම පැය 6 වරක්, පැය 24කදී උපරිම වාර 4ක් දක්වා`;
-    document.getElementById('doseMg2').innerText = `${doseMg2} mg ஒவ்வொரு 6 மணித்தியாலங்களிற்கு ஒரு முறை, அதிகபட்சம் 24 மணி நேரத்தில் 4 தடவைகள்`;
     
+        
 }

@@ -28,7 +28,7 @@ body {
 h1 {
     font-size: 20px;
     color: #040404;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
 p {
@@ -52,7 +52,7 @@ label {
 
 input[type="number"] {
     padding: 8px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 12px;
@@ -100,8 +100,29 @@ button:hover {
 .result {
     margin-top: 10px;
     font-size: 14px;
-    color: #333;
+    color: #a92929;
 }
+
+/* Additional styles for radio buttons */
+.type_dos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start of the container */
+    margin-bottom: 15px; /* Adjust the bottom margin if needed */
+}
+
+.type_dos label {
+    display: flex;
+    align-items: center; /* Vertically align the radio button and text */
+    margin-bottom: 10px; /* Space between the labels */
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+.type_dos input[type="radio"] {
+    margin-right: 8px; /* Space between the radio button and text */
+}
+
+
 
 /* Laptop (1024px) */
 @media (max-width: 1024px) {
