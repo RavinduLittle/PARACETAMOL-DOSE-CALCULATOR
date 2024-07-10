@@ -9,16 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to toggle visibility of liquid fields
     function toggleFields() {
-        if (document.querySelector('input[name="form"]:checked').value === 'liquid') {
+        const selectedForm = document.querySelector('input[name="form"]:checked');
+        if (selectedForm && selectedForm.value === 'liquid') {
             liquidFields.style.display = 'block';
             resultMl.parentElement.style.display = 'block';
             resultMg.parentElement.style.display = 'none';
             tabletInfo.style.display = 'none';
-        } else {
+        } else if (selectedForm && selectedForm.value === 'tablet') {
             liquidFields.style.display = 'none';
             resultMl.parentElement.style.display = 'none';
             resultMg.parentElement.style.display = 'block';
             tabletInfo.style.display = 'block';
+        } else {
+            liquidFields.style.display = 'none';
+            resultMl.parentElement.style.display = 'none';
+            resultMg.parentElement.style.display = 'none';
+            tabletInfo.style.display = 'none';
         }
     }
 
@@ -33,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function calculateDose() {
     const weight = parseFloat(document.getElementById('weight').value);
-    const form = document.querySelector('input[name="form"]:checked').value;
+    const form = document.querySelector('input[name="form"]:checked') ? document.querySelector('input[name="form"]:checked').value : null;
     const resultMl = document.getElementById('doseMl');
     const resultMl2 = document.getElementById('doseM2');
     const resultMg = document.getElementById('doseMg');
@@ -58,9 +64,7 @@ function calculateDose() {
         resultMl2.textContent = "";
         resultMg.textContent = doseMg.toFixed(2) + " mg  සෑම පැය 6 වරක්, පැය 24කදී උපරිම වාර 4ක් දක්වා";
         resultMg2.textContent = doseMg.toFixed(2) + " mg ஒவ்வொரு 6 மணித்தியாலங்களிற்கு ஒரு முறை, அதிகபட்சம் 24 மணி நேரத்தில் 4 தடவைகள்";
-
-       
+    } else {
+        alert("Please select a form.");
     }
-    
-        
 }
