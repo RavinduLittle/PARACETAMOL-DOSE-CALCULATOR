@@ -8,6 +8,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
+    
 }
 
 .calculator-container {
@@ -20,9 +21,10 @@ body {
     text-align: center;
 }
 
-.sinhala, .tamil {
+.sinhala {
     color: #090808;
     font-weight: bold;
+    
 }
 
 h1 {
@@ -35,6 +37,8 @@ p {
     font-size: 12px;
     color: #000000;
     margin-bottom: 10px;
+    text-align:justify;
+    padding: 5px;
 }
 
 form {
