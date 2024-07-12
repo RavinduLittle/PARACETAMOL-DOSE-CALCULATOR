@@ -67,12 +67,12 @@ function calculateDose() {
     } else {
         alert("Please select a form.");
     }
-    resultMg.style.color="blue";
+    resultMg.style.color="#087f5b";
     resultMg.style.fontWeight="bold";
-    resultMg2.style.color="blue";
+    resultMg2.style.color="#087f5b";
 
-    resultMl.style.color="blue";
+    resultMl.style.color="#087f5b";
     resultMl.style.fontWeight="bold";
-    resultMl2.style.color="blue";
+    resultMl2.style.color="#087f5b";
     
 }
