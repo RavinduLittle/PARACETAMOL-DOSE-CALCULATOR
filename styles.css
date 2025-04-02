@@ -28,7 +28,7 @@ body {
 h1 {
     font-size: 20px;
     color: #040404;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
 p {
@@ -52,7 +52,7 @@ label {
 
 input[type="number"] {
     padding: 8px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 12px;
@@ -61,7 +61,7 @@ input[type="number"] {
 }
 
 fieldset {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border: none;
     padding: 0;
 }
